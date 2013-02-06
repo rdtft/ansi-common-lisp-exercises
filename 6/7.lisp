@@ -1,0 +1,10 @@
+(let ((prev nil))
+  (defun greater-than-last-time? (n)
+    (cond ((null prev)
+           (setf prev n)
+           nil)
+          ((> n prev)
+           (setf prev n))
+          (t
+	   (setf prev n)
+	   nil))))

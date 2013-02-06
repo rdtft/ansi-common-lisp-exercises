@@ -1,0 +1,8 @@
+(defun file->list-of-lines (path)
+  (with-open-file (str path :direction :input)
+    (let ((list-strings nil))
+      (do ((line (read-line str nil 'eof)
+                 (read-line str nil 'eof)))
+	  ((eql line 'eof))
+        (push line list-strings))
+      (nreverse list-strings))))

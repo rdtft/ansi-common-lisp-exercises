@@ -1,0 +1,5 @@
+(defun square (x)
+  (if (and (integerp x)
+           (> x 0)
+           (<= x 5))
+      (* x x)))

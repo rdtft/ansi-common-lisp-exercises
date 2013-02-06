@@ -1,0 +1,6 @@
+(defun our-remove-if (fn lst)
+  (let ((acc nil))
+    (dolist (x lst)
+      (unless (funcall fn x)
+        (push x acc)))
+    (nreverse acc)))

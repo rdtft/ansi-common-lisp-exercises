@@ -1,0 +1,13 @@
+(defun hash->alist (ht)
+  (let ((alist nil))
+    (maphash #'(lambda (k v)
+                 (push (cons k v) alist)) ht)
+    alist))
+
+(defun alist-hash (alist)
+  (let ((ht (make-hash-table)))
+    (dolist (key-value alist)
+      (let ((key (car key-value))
+            (value (cdr key-value)))
+        (setf (gethash key ht) value)))
+    ht))
